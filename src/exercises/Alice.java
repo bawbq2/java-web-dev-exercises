@@ -24,7 +24,12 @@ public class Alice {
 //        System.out.println("Term to search is: "+ termToSearch);
 //        System.out.println("Term to search Lowercase is: "+ termToSearchLowercase);
         System.out.println("Your search term was at index " + firstParagraphLowercase.indexOf(termToSearchLowercase) + " and its length was " + termToSearchLowercase.length());
-        String firstParagraphTermToSearchRemoved = firstParagraph.replace(termToSearchLowercase, "");
+        int termToRemove = firstParagraphLowercase.indexOf(termToSearchLowercase);
+        int termToRemoveLength = termToSearchLowercase.length();
+        System.out.println("at index " + termToRemove + " and length "+ termToRemoveLength);
+        String properCaseTermToRemove = firstParagraph.substring(termToRemove, termToRemove + termToRemoveLength);
+        System.out.println("The proper case term to be removed is " + properCaseTermToRemove);
+        String firstParagraphTermToSearchRemoved = firstParagraph.replace(properCaseTermToRemove, "");
         System.out.println(firstParagraphTermToSearchRemoved);
     }
 }
